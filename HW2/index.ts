@@ -43,12 +43,15 @@ const main = (): void => {
             Buffer.concat(chunks).toString()
          );
 
-         if (!data.info || !data.info.requires_dist) {
-            console.log(`No info about package '${packageName}'`);
-            return;
+         if (!data['info']) {
+            return console.log(`No info about package '${packageName}'`);
          }
 
-         const dependencies: string[] = data.info.requires_dist;
+         if (!data['info']['requires_dist']) {
+            return console.log('There is no dependencies :)');
+         }
+
+         const dependencies: string[] = data['info']['requires_dist'];
          console.log(createOutputGraph(packageName, dependencies));
       });
 

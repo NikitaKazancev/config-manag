@@ -1,0 +1,86 @@
+[
+   {
+      "name": "Initial commit",
+      "nodes": [{ "type": "file", "name": "README.md" }]
+   },
+   {
+      "parent": "Initial commit",
+      "name": "hw2",
+      "nodes": [
+         {
+            "type": "dir",
+            "name": "HW2",
+            "nodes": [
+               { "type": "file", "name": "IFetchResponse.ts" },
+               { "type": "file", "name": "index.ts" },
+               { "type": "file", "name": "package-lock.json" },
+               { "type": "file", "name": "package.json" },
+               { "type": "file", "name": "tsconfig.json" }
+            ]
+         },
+         { "type": "file", "name": ".gitignore" },
+         { "type": "file", "name": "README.md" }
+      ]
+   },
+   {
+      "parent": "hw2",
+      "name": "test",
+      "nodes": [
+         {
+            "type": "dir",
+            "name": "HW2",
+            "nodes": [
+               { "type": "file", "name": "IFetchResponse.ts" },
+               { "type": "file", "name": "index.ts" },
+               { "type": "file", "name": "package-lock.json" },
+               { "type": "file", "name": "package.json" },
+               { "type": "file", "name": "tsconfig.json" }
+            ]
+         },
+         {
+            "type": "dir",
+            "name": "HW5",
+            "nodes": [
+               {
+                  "type": "dir",
+                  "name": "test",
+                  "nodes": [{ "type": "file", "name": "test.py" }]
+               }
+            ]
+         },
+         { "type": "file", "name": ".gitignore" },
+         { "type": "file", "name": "README.md" }
+      ]
+   },
+   {
+      "parent": "test",
+      "name": "done",
+      "nodes": [
+         {
+            "type": "dir",
+            "name": "HW2",
+            "nodes": [
+               { "type": "file", "name": "IFetchResponse.ts" },
+               { "type": "file", "name": "index.ts" },
+               { "type": "file", "name": "package-lock.json" },
+               { "type": "file", "name": "package.json" },
+               { "type": "file", "name": "tsconfig.json" }
+            ]
+         },
+         {
+            "type": "dir",
+            "name": "HW5",
+            "nodes": [
+               {
+                  "type": "dir",
+                  "name": "test",
+                  "nodes": [{ "type": "file", "name": "test.py" }]
+               },
+               { "type": "file", "name": "main.py" }
+            ]
+         },
+         { "type": "file", "name": ".gitignore" },
+         { "type": "file", "name": "README.md" }
+      ]
+   }
+]

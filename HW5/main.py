@@ -91,27 +91,27 @@ def getNodes(commits, trees):
         for tree in trees:
             if (cm['tree'] == tree['name']):
                 for node in tree['files']:
-                    if (node not in nodes and node['type'] == 'tree'):
+                    if (node['type'] == 'tree'):
                         newCommit['nodes'].append({'type': 'dir', 'name': node['name'], 'nodes': []})
                         nodes.append(node)
                         for tempTree in trees:
                             if (node['filePath'] == tempTree['name']):
                                 for tempNode in tempTree['files']:
-                                    if (tempNode not in nodes and tempNode['type'] == 'tree'):
+                                    if (tempNode['type'] == 'tree'):
                                         newCommit['nodes'][-1]['nodes'].append({'type': 'dir', 'name': tempNode['name'], 'nodes': []})
                                         nodes.append(tempNode)
                                         for tempTree2 in trees:
                                             if (tempNode['filePath'] == tempTree2['name']):
                                                 for tempNode2 in tempTree2['files']:
-                                                    if (tempNode2 not in nodes and tempNode2['type'] == 'blob'):
+                                                    if (tempNode2['type'] == 'blob'):
                                                         newCommit['nodes'][-1]['nodes'][-1]['nodes'].append({'type': 'file', 'name': tempNode2['name']})
                                                         nodes.append(tempNode2)
                                 for tempNode in tempTree['files']:
-                                    if (tempNode not in nodes and tempNode['type'] == 'blob'):
+                                    if (tempNode['type'] == 'blob'):
                                         newCommit['nodes'][-1]['nodes'].append({'type': 'file', 'name': tempNode['name']})
                                         nodes.append(tempNode)
                 for node in tree['files']:
-                    if (node not in nodes and node['type'] == 'blob'):
+                    if (node['type'] == 'blob'):
                         newCommit['nodes'].append({'type': 'file', 'name': node['name']})
                         nodes.append(node)
         newCommits.append(newCommit)
@@ -153,6 +153,7 @@ def getCommits(path):
     # print(commits)
 
     commits = orderCommits(commits)
+    print(trees)
     nodes = getNodes(commits, trees)
     return nodes
 
@@ -226,4 +227,4 @@ if __name__ == "__main__":
 
     commits = getCommits(path)
     graph = getGraph(commits)
-    print(graph)
+    # print(graph)
